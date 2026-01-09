@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
+
 import Dashboard from "./components/Dashboard";
 
 // (later we will add more pages)
