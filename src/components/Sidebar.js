@@ -1,23 +1,61 @@
+import { NavLink } from "react-router-dom";
+
 export default function Sidebar() {
   return (
-    <div className="sidebar">
-      <h5 className="p-3 fw-bold">AI Agent</h5>
+    <aside className="sidebar">
+      <div className="sidebar-title">AI Agent</div>
 
-      <a className="active">
-        <i className="fa fa-chart-line me-2"></i> Dashboard
-      </a>
-      <a>
-        <i className="fa fa-users me-2"></i> Team Members
-      </a>
-      <a>
-        <i className="fa fa-user me-2"></i> Customers
-      </a>
-      <a>
-        <i className="fa fa-calendar-check me-2"></i> Appointments
-      </a>
-      <a>
-        <i className="fa fa-ticket-alt me-2"></i> Tickets
-      </a>
-    </div>
+      <nav className="sidebar-nav">
+        <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            `sidebar-link ${isActive ? "active" : ""}`
+          }
+        >
+          <i className="fa fa-chart-line"></i>
+          Dashboard
+        </NavLink>
+
+        <NavLink
+          to="/team"
+          className={({ isActive }) =>
+            `sidebar-link ${isActive ? "active" : ""}`
+          }
+        >
+          <i className="fa fa-users"></i>
+          Team Members
+        </NavLink>
+
+        <NavLink
+          to="/customers"
+          className={({ isActive }) =>
+            `sidebar-link ${isActive ? "active" : ""}`
+          }
+        >
+          <i className="fa fa-user"></i>
+          Customers
+        </NavLink>
+
+        <NavLink
+          to="/appointments"
+          className={({ isActive }) =>
+            `sidebar-link ${isActive ? "active" : ""}`
+          }
+        >
+          <i className="fa fa-calendar-check"></i>
+          Appointments
+        </NavLink>
+
+        <NavLink
+          to="/tickets"
+          className={({ isActive }) =>
+            `sidebar-link ${isActive ? "active" : ""}`
+          }
+        >
+          <i className="fa fa-ticket-alt"></i>
+          Tickets
+        </NavLink>
+      </nav>
+    </aside>
   );
 }

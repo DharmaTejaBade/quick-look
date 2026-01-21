@@ -1,25 +1,25 @@
 import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
+import Dashboard from "./components/Dashboard"; 
+import Customers from "./components/Customers"; // Import the new file
+import TeamMembers from "./components/TeamMembers";
 
-import Dashboard from "./components/Dashboard";
 
-// (later we will add more pages)
-const TeamMembers = () => <div className="p-4">Team Members</div>;
-const Customers = () => <div className="p-4">Customers</div>;
 
-export default function App() {
+function App() {
   return (
-    <div className="d-flex">
+    <div className="app-layout">
       <Sidebar />
 
-      <div className="flex-grow-1">
+      <main className="main-content">
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/team" element={<TeamMembers />} />
           <Route path="/customers" element={<Customers />} />
         </Routes>
-      </div>
+      </main>
     </div>
   );
 }
+export default  App;
