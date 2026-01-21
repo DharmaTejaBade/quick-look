@@ -12,7 +12,6 @@ function App() {
   return (
     <div className="app-layout">
       <Sidebar />
-
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Dashboard />} />

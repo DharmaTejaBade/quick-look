@@ -180,6 +180,8 @@ a { text-decoration: none; }
   border-radius: 16px;
   border: 1px solid var(--border);
   overflow: hidden; /* Clips the table corners */
+  position: relative;   /* needed for absolute positioning inside */
+  overflow: visible;    /* allow dropdowns to appear outside */
 }
 
 .table-filters {
@@ -187,6 +189,10 @@ a { text-decoration: none; }
   border-bottom: 1px solid var(--border);
   display: flex;
   gap: 16px;
+  display: flex;
+  gap: 1rem;           /* spacing between status & sort */
+  position: relative;  /* dropdown absolute inside this */
+  overflow: visible;   /* important: allow dropdown to show */
 }
 
 .custom-table {
@@ -340,3 +346,37 @@ a { text-decoration: none; }
 }
 
 .large-tile { grid-column: span 2; grid-row: span 2; }
+.dropdown-text {
+  position: relative;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.dropdown-text .dropdown-menu {
+  position: absolute;
+  top: 100%;           /* appear below the label */
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.25rem 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  min-width: 80px;
+  z-index: 999;        /* very important */
+}
+
+.dropdown-text .dropdown-menu li {
+  list-style: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.dropdown-text .dropdown-menu li:hover {
+  background: #f1f1f1;
+}
+
+.fa-chevron-down.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.2s;
+}
