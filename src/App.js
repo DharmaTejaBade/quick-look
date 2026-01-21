@@ -3,6 +3,8 @@ import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/Dashboard"; 
 import Customers from "./components/Customers"; // Import the new file
 import TeamMembers from "./components/TeamMembers";
+import Appointments from "./components/Appointments"; 
+import Tickets from "./components/Tickets";
 
 
 
@@ -17,6 +19,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/team" element={<TeamMembers />} />
           <Route path="/customers" element={<Customers />} />
+          <Route path="/appointments" element={<Appointments />} />
+          <Route path="/tickets" element={<Tickets />} />
         </Routes>
       </main>
     </div>
